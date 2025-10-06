@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Models - Models</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+        nav {
+            background: white;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: lowercase;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links a.active {
+            color: #8B0000;
+        }
+        .models-header {
+            padding: 3rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .search-filter {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #999;
+        }
+
+        .search-box input::placeholder {
+            color: #bbb;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+
+        .filter-box {
+            position: relative;
+        }
+
+        .filter-box select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            appearance: none;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .filter-box select:focus {
+            border-color: #999;
+        }
+
+        .filter-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .models-section {
+            padding: 2rem 4rem 4rem;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .model-card {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .model-image {
+            width: 100%;
+            padding-bottom: 140%;
+            background: #d3d3d3;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .model-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        footer {
+            background: white;
+            padding: 4rem 4rem 2rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-transform: lowercase;
+        }
+
+        .footer-logo span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            color: #8B0000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: #8B0000;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #666;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        @media (max-width: 1200px) {
+            .models-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .models-header {
+                padding: 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .models-section {
+                padding: 2rem;
+            }
+
+            .models-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .footer-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            future
+            <span>models.id</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="model.html" class="active">MODELS</a></li>
+            <li><a href="forum.html">FORUM</a></li>
+            <li><a href="signUp.html">SIGN UP</a></li>
+        </ul>
+    </nav>
+    <section class="models-header">
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" placeholder="Search model by name...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-box">
+                <select>
+                    <option>All Categories</option>
+                    <option>Male Models</option>
+                    <option>Female Models</option>
+                    <option>Commercial</option>
+                    <option>Editorial</option>
+                    <option>Runway</option>
+                </select>
+                <span class="filter-icon">▼</span>
+            </div>
+        </div>
+        <div class="header-text">
+            <h1>EVERYONE IN FUTURE MANIFESTS THE ESSENCE OF AN ICON WHERE WE POSSESS VALUES AND QUALITIES REPRESENTING COMMUNITY'S ASPIRATIONS.</h1>
+        </div>
+    </section>
+    <section class="models-section">
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+
+            <div class="model-card">
+                <div class="model-image"></div>
+                <h3 class="model-name">NAME</h3>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-logo">
+           <img src="assets/Future.png" alt="">
+        </div>
+        
+        <ul class="footer-nav">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="model.html">MODELS</a></li>
+            <li><a href="forum.html">FORUM</a></li>
+            <li><a href="signUp.html">SIGN UP</a></li>
+        </ul>
+
+        <div class="footer-contact">
+            info@futuremodels.id.com
+        </div>
+
+        <div class="social-links">
+<a href="#" aria-label="Instagram"><img src="assets/mdi_instagram.png" alt=""></a>
+            <a href="#" aria-label="YouTube"><img src="assets/mdi_youtube.png" alt=""></a>
+            <a href="#" aria-label="TikTok"><img src="assets/ic_baseline-tiktok.png" alt=""></a>
+        </div>
+
+        <div class="copyright">
+            Copyright © futuremodels.id 2025
+        </div>
+    </footer>
+</body>
+</html>
