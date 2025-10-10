@@ -321,3 +321,22 @@
                 text-align: center;
             }
         }
+                .footer-logo img {
+    height: 100px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+.logo img {
+    height: 100px;
+    width: auto;
+}
+.signup-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.3);
+    z-index: 1;
+}
