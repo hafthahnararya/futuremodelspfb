@@ -9,8 +9,7 @@
 <body>
     <nav>
         <div class="logo">
-            future
-            <span>models.id</span>
+            <img src="assets/Future.png" alt="">
         </div>
         <ul class="nav-links">
             <li><a href="about.html">ABOUT</a></li>
@@ -21,7 +20,9 @@
     </nav>
     <section class="login-section">
         <div class="login-background"></div>
-        
+        <video class="signup-video" autoplay muted loop playsinline>
+    <source src="assets/Video/background.mp4" type="video/mp4">
+</video>
         <div class="main-content">
             <div class="login-content">
                 <p>Jakarta-based model management agency with a focus on diverse, standout talent.</p>
@@ -35,22 +36,22 @@
                 <form>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" placeholder="example">
+                        <input type="text" placeholder="example" id='username'>
                     </div>
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" placeholder="password">
+                        <input type="password" placeholder="password" id="password">
                     </div>
 
                     <div class="remember-me">
                         <input type="checkbox" id="remember">
                         <label for="remember">Remember me?</label>
                     </div>
-
-                    <button type="submit" class="login-button">LOGIN</button>
+                    <p id="error"></p>
+                    <button type="submit" class="login-button" id="button">LOGIN</button>
                     <div class="register-link">
-                        Don't have an account yet? <a href="signUp.html">Click here to Register.</a>
+                        Don't have an account yet? <a href="signup.html">Click here to Register.</a>
                     </div>
                 </form>
             </div>
@@ -88,5 +89,6 @@
             Copyright © futuremodels.id 2025
         </div>
     </footer>
+    <script src="JavaScript/login.js"></script>
 </body>
 </html>
