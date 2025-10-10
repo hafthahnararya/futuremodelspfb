@@ -9,8 +9,7 @@
 <body>
     <nav>
         <div class="logo">
-            future
-            <span>models.id</span>
+            <img src="assets/Future.png" alt="">
         </div>
         <ul class="nav-links">
             <li><a href="about.html">ABOUT</a></li>
@@ -22,7 +21,9 @@
 
     <section class="signup-section">
         <div class="signup-background"></div>
-        
+        <video class="signup-video" autoplay muted loop playsinline>
+    <source src="assets/Video/background.mp4" type="video/mp4">
+</video>
         <div class="main-content">
             <div class="signup-content">
                 <p>Jakarta-based model management agency with a focus on diverse, standout talent.</p>
@@ -36,20 +37,20 @@
                 <form>
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" placeholder="">
+                        <input type="text" placeholder="" id="name">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label>Date of Birth</label>
                             <div class="input-with-icon">
-                                <input type="date" placeholder="MM/DD/YYYY">
+                                <input type="date" placeholder="MM/DD/YYYY" id="dob">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Contact Number</label>
                             <div class="input-with-icon">
-                                <input type="tel" placeholder="+62 857-5555-1330">
+                                <input type="tel" placeholder="+62 857-5555-1330" id="phone">
                                 <span class="input-icon"><img src="assets/Telephone.png" alt=""></span>
                             </div>
                         </div>
@@ -58,12 +59,12 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" placeholder="example">
+                            <input type="text" placeholder="example" id="username">
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
                             <div class="input-with-icon">
-                                <input type="email" placeholder="example@gmail.com">
+                                <input type="email" placeholder="example@gmail.com" id="email">
                                 <span class="input-icon"><img src="assets/mails.png" alt=""></span>
                             </div>
                         </div>
@@ -72,15 +73,15 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" placeholder="password">
+                            <input type="password" placeholder="password" id="password">
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
-                            <input type="password" placeholder="confirm password">
+                            <input type="password" placeholder="confirm password" id="confirmpassword">
                         </div>
                     </div>
-
-                    <button type="submit" class="signup-button">SIGN UP</button>
+                    <p id="error"></p>
+                    <button type="submit" class="signup-button" id="signup">SIGN UP</button>
                     <div class="login-link">
                         Already have an account? <a href="login.html">Click here to Login.</a>
                     </div>
@@ -119,5 +120,7 @@
             Copyright © futuremodels.id 2025
         </div>
     </footer>
+
+    <script src="JavaScript/signup.js"></script>
 </body>
 </html>
