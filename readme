@@ -1,4 +1,12 @@
-kenzie
-James
-Atha
-Christitus 
+Hal yang perlu disiapkan
+Xampp -> https://www.apachefriends.org/download.html
+PHP -> https://www.php.net/downloads.php
+Visual Studio Code -> https://code.visualstudio.com/download
+
+Untuk melakukan setup pada proggram ini dimulai pada util/function.php dimana anda perlu untuk memanggil function
+CreateDatabaseAndTables();
+
+tekan ctrl + ` pada vs code dan jalankan command
+php -S localhost:9002
+
+lalu proggram bisa dijalankan
