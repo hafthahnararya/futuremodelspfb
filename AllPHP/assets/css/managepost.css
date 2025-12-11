@@ -1,0 +1,333 @@
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #000;
+    padding: 0 1rem;
+}
+
+.tab {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: grey;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.tab.active {
+    color: white;
+    border-bottom-color: #000;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.posts-table {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+.posts-table th,
+.posts-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.posts-table th {
+    background: #f8f8f8;
+    font-weight: 600;
+    color: #000; 
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.posts-table td {
+    color: #333; 
+    font-size: 0.9rem;
+}
+
+.posts-table tr:hover {
+    background: #f9f9f9;
+}
+.posts-table .post-title-cell {
+    color: #000; 
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.posts-table .post-author-cell {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.posts-table .post-date-cell {
+    color: #888; 
+    font-size: 0.8rem;
+}
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+.action-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.status-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #333; 
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.btn-update {
+    padding: 8px 16px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-update:hover {
+    background: #333;
+}
+.reason-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    display: none;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.reason-input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.reject-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.reject-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid #000;
+    width: 90%;
+    max-width: 500px;
+}
+
+.reject-modal h3 {
+    margin: 0 0 1rem 0;
+    color: #8B0000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.reject-modal textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #333; 
+}
+
+.reject-modal textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.reject-modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-cancel {
+    padding: 10px 20px;
+    background: transparent;
+    color: #333;
+    border: 2px solid #000;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-cancel:hover {
+    background: #000;
+    color: white;
+}
+
+.btn-confirm-reject {
+    padding: 10px 20px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-confirm-reject:hover {
+    background: #700000;
+}
+.no-posts {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
+
+.no-posts h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.no-posts p {
+    font-size: 0.9rem;
+    color: #666; 
+}
+.flash-message {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    animation: slideDown 0.3s ease;
+    line-height: 1.6;
+}
+
+.flash-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .tab {
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .action-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .status-select,
+    .reason-input,
+    .btn-update {
+        width: 100%;
+    }
+    
+    .reject-modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .reject-modal-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cancel,
+    .btn-confirm-reject {
+        width: 100%;
+        text-align: center;
+    }
+}
