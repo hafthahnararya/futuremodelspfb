@@ -2,6 +2,7 @@ Hal yang perlu disiapkan
 Xampp -> https://www.apachefriends.org/download.html
 PHP -> https://www.php.net/downloads.php
 Visual Studio Code -> https://code.visualstudio.com/download
+Canva link (end result) -> https://canva.link/oh9osaw0df0vh2b
 
 Untuk melakukan setup pada proggram ini dimulai pada util/function.php dimana anda perlu untuk memanggil function
 CreateDatabaseAndTables();
